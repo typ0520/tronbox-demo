@@ -1,0 +1,15 @@
+{
+  "name": "tronbox-demo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "tronbox": "tronbox",
+    "compile": "tronbox compile",
+    "console": "tronbox console",
+    "migrate": "tronbox migrate",
+    "test": "tronbox test"
+  },
+  "devDependencies": {
+    "tronbox": "^2.7.17"
+  }
+}
