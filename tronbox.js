@@ -1,4 +1,6 @@
 const port = process.env.HOST_PORT || 9095
+const fs = require('fs');
+const privatekey = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   networks: {
@@ -22,8 +24,8 @@ Then, run the migration with:
     },
     shasta: {
       //privateKey: process.env.PRIVATE_KEY_SHASTA,
-      privateKey: 'a2f90fceda23131ecc0c49d18bad258c624be4569419da4901c81dc96d39c1ae',
-      userFeePercentage: 50,
+      privateKey: privatekey,
+      userFeePercentage: 50, 
       feeLimit: 1e8,
       fee_limit: 100000000,
       fullHost: 'https://api.shasta.trongrid.io',
@@ -38,9 +40,9 @@ Then, run the migration with:
     },
     development: {
       // For trontools/quickstart docker image
-      privateKey: '3145b60cb2d432e4cdb92419599e1a525197552f88374b67a7ba2338f80bbe85',
+      privateKey: '2ff8a6b4237cbd2f6f1d64146c6214fff68a2aa778d8819b795ec1b53e1ee8df',
       userFeePercentage: 0,
-      feeLimit: 1e8,
+      feeLimit: 0,
       fullHost: 'http://127.0.0.1:' + port,
       network_id: '9'
     },
